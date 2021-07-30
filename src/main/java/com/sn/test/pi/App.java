@@ -131,7 +131,6 @@ public class App
 		return inputList;
 	}
 
-
 	/**
 	 * this method receives the analysis results and writes it into the output file, line by line
 	 * 
