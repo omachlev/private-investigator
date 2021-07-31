@@ -53,10 +53,37 @@ once finished reading the input, the app iterates over the permutationsMap, and 
 
 1. download the code and build it using Maven - cd to the **/private-investigator** directory, where the pom.xml file resides, and run the maven command:
 ```  mvn clean install ```
-2. after build finishes successfuly, cd to **/target directory**, where the **private_investigator.jar** file was created and 
+- alternatively, download the **private_investigator.jar** from within this repository: [omachlev/private-investigator/JAR](https://github.com/omachlev/private-investigator/tree/master/JAR)
+2. after build finishes successfuly, cd to **/target** directory, where the **private_investigator.jar** file was created
+3. run the app with the following command, without providing the path to the input file, to use the default input.txt file loacted in input directory:
+```
+java -jar private_investigator.jar
+```
+or
+run the app with the following command, providing the absolute or relative path to the input file:
+```
+java -jar private_investigator.jar /Users/<USER>/Documents/eclipse-workspace/private-investigator/input/input.txt
+```
+```
+java -jar private_investigator.jar ../input/input.txt
+```
 
+#### the console output should look like:
 
-(2 options)
+```
+Input file will be analyzed: ../input/input.txt
+
+*** Application Private-Investigator started ***
+- Start reading information from input file: ../input/input.txt
+- Finished reading information from input file: ../input/input.txt
+- Starting to analyze received input...
+- Finishid anlyzing Input file - Number of rows analyzed: 8
+- Starting to write results to output file
+- Finished writing results to output file: ./output_1627766035154.txt
+*** Application Private-Investigator finished ***
+```
+
+#### and the output file (e.g. output_1627766035154.txt) will be created at the directory where the app was run, e.g. /private-investigator/target
 
 
 1. What can you say about the complexity of your code? 
