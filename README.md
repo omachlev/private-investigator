@@ -86,12 +86,14 @@ Input file will be analyzed: ../input/input.txt
 #### and the output file (e.g. output_1627766035154.txt) will be created at the directory where the app was run, e.g. /private-investigator/target
 
 
+### Code Complexity
 1. What can you say about the complexity of your code? 
 
 
+### Scaling
 2. How will your algorithm scale?
 
-
+### Better implementation/s
 3. If you had two weeks to do this task, what would you have done differently? What would be better?
 
 
