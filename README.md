@@ -86,14 +86,21 @@ Input file will be analyzed: ../input/input.txt
 #### and the output file (e.g. output_1627766035154.txt) will be created at the directory where the app was run, e.g. /private-investigator/target
 
 
-### Code Complexity
-1. What can you say about the complexity of your code? 
+## What can you say about the complexity of your code?
+**Code complexity = O(n)** - Assuming the number of words in a sentence is limited (according to problem statement: “consistent phrasing to describe what is going on”), we can refer to that parameter as a constant **_c_**, therefore the running time is at most **_cn_** for every input of size **_n_** (the number of lines in the input file). 
 
 
-### Scaling
-2. How will your algorithm scale?
+## How will your algorithm scale?
+The implemented algorithm is somewhat primitive, and is not built for scale. It is single threaded, and using non-thread-safe data structures (e.g. HashMap). In order to make it thread-safe, we can use ConcurrentHashMap instead, and take care of all synchronizations needs in the code. After doing that, we can implement multi-threaded application for processing the input file/s. <br>Better yet, for scale, see next item - "If you had two weeks..."
 
-### Better implementation/s
-3. If you had two weeks to do this task, what would you have done differently? What would be better?
+
+## If you had two weeks to do this task, what would you have done differently? What would be better?
+For this sort of problem, and in order to have a high performance, scalable, highly available solution I would have implemented the following:
+1. Have Logstash containers (managed by K8s) running and reading the input file/s, line by line, performing some preliminary processing of the input (e.g. splitting the lines to time-stamp, sentence, etc.), and 
+2. writing the output to Kafka Message Broker 
+3. Implement the code in Apache Spark (or Storm) - read the events from the Kafka topic and perform the batch processing and generate the final result
+
+
+
 
 
